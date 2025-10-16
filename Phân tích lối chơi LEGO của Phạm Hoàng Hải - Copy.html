@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phân tích lối chơi LEGO của Phạm Hoàng Hải</title>
+  <style>
+    body {
+      background: url('./tay\ của\ nguyen\ pham\ khanh\ hoang\ bang\ thanh\ hai.png'), no-repeat center center fixed;
+      font-family: "Trebuchet MS", sans-serif;
+      color: #2d3436;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #d63031;
+    }
+    .lego-board {
+      display: grid;
+      grid-template-columns: repeat(6, 60px);
+      grid-gap: 8px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .brick {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .brick:hover {
+      transform: translateY(-8px);
+    }
+    .analysis {
+      margin-top: 40px;
+      font-size: 1.2em;
+      background: rgba(255,255,255,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      margin-top: 25px;
+      background: #00cec9;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0984e3;
+    }
+    .buff {
+      margin-top: 20px;
+      font-size: 1.3em;
+      color: #0984e3;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Phân tích lối chơi LEGO của Phạm Hoàng Hải</h1>
+  <p><i>“Mỗi viên gạch là một tư duy, mỗi cấu trúc là một triết lý.”</i></p>
+  
+  <div class="lego-board" id="board"></div>
+  
+  <div class="analysis" id="analysis">
+    <p>Phạm Hoàng Hải xây LEGO theo phong cách <b>chiến lược – phòng thủ – sáng tạo</b>.</p>
+    <p>Anh ấy không chỉ lắp ráp, mà còn <b>tư duy cấu trúc</b>, cân bằng giữa nghệ thuật và toán học.</p>
+    <p>Khi mỗi khối được đặt đúng chỗ, thế giới của anh ấy vững chắc hơn — cả trong LEGO lẫn trong cuộc đời.</p>
+  </div>
+  
+  <button onclick="buffDefense()">✨ Tăng DEF + Hạnh phúc ✨</button>
+  <div class="buff" id="buff"></div>
+
+  <script>
+    const colors = ["#d63031", "#fdcb6e", "#00b894", "#0984e3", "#6c5ce7", "#e17055"];
+    const board = document.getElementById("board");
+    for (let i = 0; i < 24; i++) {
+      const brick = document.createElement("div");
+      brick.className = "brick";
+      brick.style.background = colors[Math.floor(Math.random() * colors.length)];
+      board.appendChild(brick);
+    }
+
+    function buffDefense() {
+      const buffText = [
+        "🧱 Defense +9999: Không ai có thể phá vỡ niềm tin LEGO của bạn!",
+        "💫 Happiness +∞: Niềm vui LEGO lan tỏa khắp vũ trụ!",
+        "🛡️ Inner Shield Activated: Bình an trong từng viên gạch.",
+        "🎇 Cấu trúc vĩnh hằng: Hạnh phúc không thể bị tháo rời."
+      ];
+      const msg = buffText[Math.floor(Math.random() * buffText.length)];
+      document.getElementById("buff").textContent = msg;
+    }
+  </script>
+</body>
+</html>
